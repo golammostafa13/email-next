@@ -1,7 +1,7 @@
 import { getEmailInFolder } from '@/app/db/queries';
 import { formatEmailString } from '@/app/db/utils';
 import { Toolbar } from '@/app/components/toolbar';
-// import { EmailListColumn } from '@/app/components/email-list-column';
+import { EmailListColumn } from '@/app/components/email-list-column';
 import { FolderColumn } from '@/app/components/folder-column';
 import { EmailEmptyView } from '@/app/components/email-empty-view';
 import { Suspense } from 'react';
@@ -20,7 +20,7 @@ export default function EmailPage({
   return (
     <div className="grid grid-cols-6 gap-2 h-screen p-2">
       <FolderColumn />
-      {/* <EmailListColumn folderName={params.name} searchParams={searchParams} /> */}
+      <EmailListColumn folderName={params.name} searchParams={searchParams} />
       {/* <Suspense fallback={<EmailEmptyView />}> */}
         <SelectedEmailColumn
           folderName={params.name}
