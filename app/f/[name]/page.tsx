@@ -21,12 +21,12 @@ export default function EmailPage({
     <div className="grid grid-cols-6 gap-2 h-screen p-2">
       <FolderColumn />
       <EmailListColumn folderName={params.name} searchParams={searchParams} />
-      {/* <Suspense fallback={<EmailEmptyView />}> */}
+      <Suspense fallback={<EmailEmptyView />}>
         <SelectedEmailColumn
           folderName={params.name}
           searchParams={searchParams}
         />
-      {/* </Suspense> */}
+      </Suspense>
     </div>
   );
 }
